@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import Avatar from "../../images/francesco-avatar.jpg";
+---
+
+<div class="flex h-fit w-fit items-end gap-x-3">
+  <Image
+    src={Avatar}
+    alt="Portrait icon of Francesco Violante"
+    class="w-6 h-6 rounded-full object-cover object-center"
+  />
+  <ul class="flex flex-col gap-y-2">
+    <slot />
+  </ul>
+</div>

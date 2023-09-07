@@ -1,0 +1,54 @@
+---
+import Group from "./Group.astro";
+import Message from "./Message.astro";
+---
+
+<div class="flex flex-col gap-y-8">
+  <Group>
+    <Message>
+      Hey, there
+      <div role="img" aria-label="Waving hand" class="wave-animation pl-1">
+        👋🏻
+      </div>
+    </Message>
+    <Message>
+      I’m Francesco, a skilled React developer with a passion for crafting
+      engaging web experiences
+    </Message>
+    <Message>
+      Expertise in front-end development, creating dynamic interfaces that
+      captivate users.
+    </Message>
+  </Group>
+
+  <Group>
+    <Message>
+      I’m currently working at <a href="https://www.idealista.com">Kanpla</a>
+       as a Frontend Engineer.
+    </Message>
+    <Message>
+      I’m also a <a href="https://www.idealista.com/labs">Labs</a> member, where
+      I work on side projects and prototypes.
+    </Message>
+  </Group>
+</div>
+
+<style>
+  @keyframes wave {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    75% {
+      transform: rotate(-10deg);
+    }
+  }
+
+  .wave-animation {
+    transform-origin: bottom center;
+    animation: wave 0.8s 10 linear;
+  }
+</style>
