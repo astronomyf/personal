@@ -81,6 +81,8 @@
 </nav>
 
 <script>
+  type Theme = "dark" | "light";
+
   // Get theme icons
   const sunIcon = document.querySelector<HTMLElement>(
     "#theme-toggle .icon-tabler-sun",
@@ -107,7 +109,11 @@
     sunIcon.classList.add("hidden");
   };
 
-  const switchIcon = (theme: "dark" | "light") => {
+  const switchMapTheme = (theme: Theme) => {
+    window.mapInstance?.setStyle(`mapbox://styles/mapbox/${theme}-v11`);
+  };
+
+  const switchIcon = (theme: Theme) => {
     if (!sunIcon || !moonIcon) return;
 
     if (theme === "dark") {
@@ -128,6 +134,7 @@
     const theme = activeTheme === "dark" ? "light" : "dark";
 
     switchIcon(theme);
+    switchMapTheme(theme);
 
     // Set new active theme
     document.dispatchEvent(new CustomEvent("set-theme", { detail: theme }));

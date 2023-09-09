@@ -1,0 +1,109 @@
+<div id="map" class="w-80 h-48 rounded-md relative z-0">
+  <div
+    id="theme-toggle"
+    class="hs-tooltip [--placement:left] absolute bottom-2 right-2 z-10 cursor-pointer hover:opacity-70 transition-opacity"
+  >
+    <div class="hs-tooltip-toggle w-auto h-auto">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-info-circle-filled text-text"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="1.75"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path
+          d="M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1 -19.995 .324l-.005 -.324l.004 -.28c.148 -5.393 4.566 -9.72 9.996 -9.72zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z"
+          stroke-width="0"
+          fill="currentColor"></path>
+      </svg>
+      <span
+        class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-flex gap-x-1 absolute invisible z-10 py-1 px-2 bg-[#F2F2F5] text-xs font-medium rounded-md shadow-sm dark:bg-[#1B1B1F] border border-border"
+        role="tooltip"
+      >
+        <a href="https://www.mapbox.com/about/maps/" class="underline"
+          >© Mapbox</a
+        >
+        <a href="https://www.openstreetmap.org/about/" class="underline"
+          >© OpenStreetMap</a
+        >
+        <a
+          href="https://www.mapbox.com/map-feedback/#/-74.5/40/10"
+          class="underline font-medium"
+        >
+          Improve this map</a
+        >
+      </span>
+    </div>
+  </div>
+</div>
+
+<script>
+  import type { LngLatLike } from "mapbox-gl";
+
+  // Get current theme
+  const activeTheme =
+    document.documentElement.attributes.getNamedItem("data-theme")?.value ||
+    "light";
+
+  mapboxgl.accessToken =
+    "pk.eyJ1IjoiZnJhbmNlc2NvdmlvbGFudGUiLCJhIjoiY2tjZzBobG9zMGF4MTJ4cXEyaWV5aDFodSJ9.sxP_T03_g-EJTaT3OLhSKg";
+
+  const mapCenter: LngLatLike = [10.20504579077126, 56.150305267537526];
+
+  const map = new mapboxgl.Map({
+    container: "map",
+    style: `mapbox://styles/mapbox/${activeTheme}-v11`,
+    center: mapCenter,
+    zoom: 11,
+    minZoom: 6,
+    attributionControl: false,
+  });
+
+  window.mapInstance = map;
+
+  // Create marker element
+  const markerElement = document.createElement("div");
+  markerElement.className =
+    "w-5 h-5 bg-blue-500 dark:bg-blue-600 border-2 border-white shadow-md rounded-full relative z-10";
+
+  // Create a child element appended to the markerElement that is an animated circle:
+  const pulse = document.createElement("div");
+  pulse.className =
+    "absolute -top-6 -left-6 w-16 h-16 bg-blue-500 dark:bg-blue-600 opacity-20 rounded-full animate-pulse-circle z-0";
+
+  markerElement.appendChild(pulse);
+
+  // Add marker
+  const marker = new mapboxgl.Marker({
+    element: markerElement,
+  })
+    .setLngLat(mapCenter)
+    .addTo(map);
+</script>
+
+<style is:global>
+  .mapboxgl-ctrl-logo {
+    display: none !important;
+  }
+
+  .animate-pulse-circle {
+    animation: pulse-circle 2s infinite;
+  }
+
+  @keyframes pulse-circle {
+    0% {
+      transform: scale(0);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+</style>

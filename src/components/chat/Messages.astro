@@ -2,6 +2,7 @@
 import Group from "./Group.astro";
 import Message from "./Message.astro";
 import Seen from "./Seen.astro";
+import Map from "../Map.astro";
 ---
 
 <div class="flex flex-col gap-y-3">
@@ -34,6 +35,12 @@ import Seen from "./Seen.astro";
       <Message>
         I’m also a <a href="https://www.idealista.com/labs">Labs</a> member,
         where I work on<br /> side projects and prototypes.
+      </Message>
+      <Message>
+        <div class="flex flex-col gap-y-2 pb-0.5">
+          📍 Currently based in Aarhus, Denmark
+          <Map />
+        </div>
       </Message>
     </Group>
   </div>
