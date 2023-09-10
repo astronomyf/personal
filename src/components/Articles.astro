@@ -10,10 +10,12 @@ const allPosts = await Astro.glob("../pages/posts/*.md");
     <Message>Some recent projects I’ve worked on:</Message>
     {
       allPosts.map((post) => (
-        <Message>
-          <h1 class="underline font-medium mb-1">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.description}</p>
-        </Message>
+        <a href={post.url}>
+          <Message clickable>
+            <h1 class="underline font-medium mb-2">{post.frontmatter.title}</h1>
+            <p>{post.frontmatter.description}</p>
+          </Message>
+        </a>
       ))
     }
   </Group>

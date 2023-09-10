@@ -1,0 +1,36 @@
+---
+import Layout from "./Layout.astro";
+import Group from "../components/chat/Group.astro";
+import Message from "../components/chat/Message.astro";
+
+const {
+  frontmatter: { title, pubDate },
+} = Astro.props;
+
+const formattedDate = new Date(pubDate).toLocaleDateString([], {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout title={title}>
+  <main
+    class="flex flex-col w-full h-full justify-center items-center p-8 py-32"
+  >
+    <Group>
+      <h2 class="text-secondary text-sm mb-2">{formattedDate}</h2>
+      <Message className="!max-w-[800px]">
+        <h1 class="underline font-medium">{title}</h1>
+      </Message>
+      <Message className="!max-w-[800px]">
+        <article class="prose dark:prose-invert">
+          <slot />
+        </article>
+      </Message>
+      <Message clickable>
+        <a class="underline font-medium" href="/">Go back</a>
+      </Message>
+    </Group>
+  </main>
+</Layout>

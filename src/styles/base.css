@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .prose {
+    @apply !text-sm !text-text !leading-[22px] prose-headings:!mb-2 first-letter:prose-headings:!text-text
+    prose-h2:!my-2 prose-h1:!my-2 prose-h3:!my-2 prose-h4:!my-2 prose-h5:!my-2 prose-h6:!my-2
+    prose-h3:italic prose-p:!text-text
+    prose-a:underline prose-a:font-medium prose-blockquote:!border-l-border
+    prose-blockquote:border-opacity-50 prose-blockquote:opacity-80
+    prose-figcaption:!text-text prose-figcaption:opacity-70
+    prose-strong:!text-text
+
+    prose-code:!rounded-lg prose-code:bg-background
+    prose-code:px-1 prose-code:py-0.5 prose-code:!text-text prose-code:border prose-code:border-border
+    prose-code:before:!content-[''] prose-code:after:!content-['']
+    prose-pre:!text-text prose-ol:!text-text 
+    prose-ul:overflow-x-clip prose-ul:!text-text prose-li:marker:!text-text
+    prose-table:text-text prose-table:!border-separate prose-table:!border-spacing-0 prose-table:!overflow-hidden
+    
+    prose-th:border prose-th:border-border
+    prose-td:border prose-td:border-border
+   
+    prose-img:mx-auto prose-img:!my-2 prose-img:rounded-md prose-img:border dark:prose-img:border-[#232427] prose-img:border-[#EFEFF4]
+    prose-hr:!border-border;
+  }
+
+  .prose tr:first-of-type th:first-of-type {
+    @apply !rounded-tl-md;
+  }
+
+  .prose tr:first-of-type th:last-of-type {
+    @apply !rounded-tr-md;
+  }
+
+  .prose tr:last-of-type td:first-of-type {
+    @apply !rounded-bl-md;
+  }
+  .prose tr:last-of-type td:last-of-type {
+    @apply !rounded-br-md;
+  }
+
+  .prose a {
+    @apply hover:!text-text;
+  }
+  .prose thead th:first-child,
+  tbody td:first-child,
+  tfoot td:first-child {
+    padding-left: 0.5714286em;
+  }
+  .prose details {
+    @apply inline-block cursor-pointer select-none text-text;
+  }
+  .prose h2#table-of-contents + p {
+    @apply hidden;
+  }
+}
