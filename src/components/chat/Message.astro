@@ -1,11 +1,16 @@
 ---
+import classNames from "classnames";
+interface Props {
+  clickable?: boolean;
+}
 
+const { clickable = false } = Astro.props;
 ---
 
 <li
-  class="inline-flex shadow-sm text-sm rounded-3xl [&:not(:first-child):not(:last-child)]:rounded-l-md first:rounded-bl-md last:rounded-tl-md border border-border dark:from-[#1B1B1F] bg-gradient-to-br dark:to-[#27282D] from-[#F2F2F5] to-[#F9F9FB] py-2 px-3.5 w-fit max-w-full md:max-w-[400px]"
+  class={classNames(
+    "inline-flex flex-col shadow-sm text-sm rounded-3xl [&:not(:first-child):not(:last-child)]:rounded-l-md first:rounded-bl-md last:rounded-tl-md border border-border dark:from-[#1B1B1F] bg-gradient-to-br dark:to-[#27282D] from-[#F2F2F5] to-[#F9F9FB] py-2 px-3.5 w-fit max-w-full md:max-w-[400px]",
+  )}
 >
-  <p>
-    <slot />
-  </p>
+  <slot />
 </li>

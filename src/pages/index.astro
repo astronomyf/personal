@@ -1,13 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Messages from "../components/chat/Messages.astro";
+import About from "../components/About.astro";
+import Seen from "../components/chat/Seen.astro";
+import Articles from "../components/Articles.astro";
 ---
 
 <Layout title="Francesco Violante">
   <main
     class="flex flex-col w-full h-full justify-center items-center p-8 py-32"
   >
-    <Messages />
+    <div class="flex flex-col gap-y-3">
+      <div class="flex flex-col gap-y-8">
+        <About />
+        <Articles />
+      </div>
+      <Seen className="ml-[38px]" />
+    </div>
   </main>
 </Layout>
 

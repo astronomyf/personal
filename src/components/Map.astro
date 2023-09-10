@@ -1,4 +1,4 @@
-<div id="map" class="w-80 h-48 rounded-md relative z-0">
+<div id="map" class="w-80 h-48 rounded-md relative z-0 my-1">
   <div
     id="theme-toggle"
     class="hs-tooltip [--placement:left] absolute bottom-2 right-2 z-10 cursor-pointer hover:opacity-70 transition-opacity"
@@ -23,7 +23,7 @@
           fill="currentColor"></path>
       </svg>
       <span
-        class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-flex gap-x-1 absolute invisible z-10 py-1 px-2 bg-[#F2F2F5] text-xs font-medium rounded-md shadow-sm dark:bg-[#1B1B1F] border border-border"
+        class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-flex gap-x-1 absolute invisible z-10 py-1 px-2 bg-[#F2F2F5] text-xs rounded-md shadow-sm dark:bg-[#1B1B1F] border border-border"
         role="tooltip"
       >
         <a href="https://www.mapbox.com/about/maps/" class="underline"
@@ -61,23 +61,28 @@
     style: `mapbox://styles/mapbox/${activeTheme}-v11`,
     center: mapCenter,
     zoom: 11,
-    minZoom: 6,
+    minZoom: 4,
     attributionControl: false,
+    dragPan: false,
   });
 
   window.mapInstance = map;
 
   // Create marker element
   const markerElement = document.createElement("div");
-  markerElement.className =
-    "w-5 h-5 bg-blue-500 dark:bg-blue-600 border-2 border-white shadow-md rounded-full relative z-10";
+  markerElement.className = "relative z-20 w-5 h-5";
 
-  // Create a child element appended to the markerElement that is an animated circle:
+  const circle = document.createElement("div");
+
+  circle.className =
+    "w-5 h-5 bg-blue-400 dark:bg-blue-500 border-2 border-white shadow-md rounded-full absolute top-0 left-0 z-20";
+
   const pulse = document.createElement("div");
   pulse.className =
-    "absolute -top-6 -left-6 w-16 h-16 bg-blue-500 dark:bg-blue-600 opacity-20 rounded-full animate-pulse-circle z-0";
+    "absolute -top-[22px] -left-[22px] w-16 h-16 bg-blue-400 dark:bg-blue-500 opacity-20 rounded-full animate-pulse-circle z-10";
 
   markerElement.appendChild(pulse);
+  markerElement.appendChild(circle);
 
   // Add marker
   const marker = new mapboxgl.Marker({
