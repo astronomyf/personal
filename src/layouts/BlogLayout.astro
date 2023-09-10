@@ -34,3 +34,49 @@ const formattedDate = new Date(pubDate).toLocaleDateString([], {
     </Group>
   </main>
 </Layout>
+
+<style is:global>
+  article pre > code {
+    @apply grid !p-0;
+  }
+  article pre {
+    @apply !bg-background !rounded-md border border-border !py-2 !px-3;
+  }
+
+  article pre > code span[data-line] {
+    @apply border-l-2 border-transparent px-1;
+  }
+
+  article pre > code span[data-highlighted-line] {
+    @apply border-blue-500 bg-blue-400 dark:bg-blue-300 bg-opacity-10 dark:bg-opacity-10;
+  }
+
+  article pre > code[data-line-numbers] {
+    counter-reset: line;
+  }
+
+  article pre > code[data-line-numbers] > span::before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    margin-right: 12px;
+    width: 1rem;
+    text-align: left;
+    @apply text-secondary;
+  }
+
+  article pre > code > span::before {
+    content: "";
+    display: inline-block;
+    width: 0.5rem;
+    text-align: right;
+  }
+
+  article pre > code[data-line-numbers-max-digits="2"] > span::before {
+    width: 1rem;
+  }
+
+  article code[data-line-numbers-max-digits="3"] > span::before {
+    width: 2rem;
+  }
+</style>

@@ -22,7 +22,7 @@
     prose-th:border prose-th:border-border
     prose-td:border prose-td:border-border
    
-    prose-img:mx-auto prose-img:!my-2 prose-img:rounded-md prose-img:border dark:prose-img:border-[#232427] prose-img:border-[#EFEFF4]
+    prose-img:mx-auto prose-img:!my-2 prose-img:rounded-md prose-img:border prose-img:border-border
     prose-hr:!border-border;
   }
 
@@ -55,4 +55,17 @@
   .prose h2#table-of-contents + p {
     @apply hidden;
   }
+}
+
+/* Code block syntax highlighting theme */
+pre[data-theme="light"],
+code[data-theme="light"],
+div[data-theme="light"] {
+  @apply block dark:hidden;
+}
+
+pre[data-theme="dark"],
+code[data-theme="dark"],
+div[data-theme="dark"] {
+  @apply hidden dark:block;
 }
