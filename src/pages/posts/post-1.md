@@ -30,7 +30,7 @@ All the blog posts were moved from `src/contents` to `src/content/blog` director
 
 Contents are now fetched with `getCollection` function. No relative path to the content needs to be specified anymore.
 
-```ts {2-4, 6} showLineNumbers
+```ts {2-4, 6}
 // old content fetching method
 const postImportResult = import.meta.glob<MarkdownInstance<Frontmatter>>(
   "../contents/**/**/*.md"

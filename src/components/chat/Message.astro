@@ -1,19 +1,24 @@
 ---
 import classNames from "classnames";
+
 interface Props {
   clickable?: boolean;
   className?: string;
+  href?: string;
 }
 
-const { clickable = false, className = "" } = Astro.props;
+const { clickable = false, className = "", href } = Astro.props;
+
+const Element = clickable ? "a" : "li";
 ---
 
-<li
+<Element
   class={classNames(
-    "inline-flex flex-col shadow-sm text-sm rounded-3xl [&:not(:first-of-type):not(:last-of-type)]:rounded-l-md first-of-type:rounded-bl-md last-of-type:rounded-tl-md border border-border dark:from-[#1B1B1F] bg-gradient-to-br dark:to-[#27282D] from-[#F2F2F5] to-[#F9F9FB] py-2 px-3.5 w-fit max-w-full md:max-w-[400px]",
+    "inline-flex flex-col shadow-sm text-sm rounded-3xl [&:not(:first-child):not(:last-child)]:rounded-l-md first:rounded-bl-md last:rounded-tl-md border border-border dark:from-[#1B1B1F] bg-gradient-to-br dark:to-[#27282D] from-[#F2F2F5] to-[#F9F9FB] py-2 px-3.5 w-fit max-w-full md:max-w-[400px]",
     clickable && "cursor-pointer transition-transform hover:translate-x-1",
     className,
   )}
+  href={clickable ? href : undefined}
 >
   <slot />
-</li>
+</Element>
