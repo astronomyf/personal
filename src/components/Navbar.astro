@@ -1,11 +1,63 @@
-<nav class="flex w-full h-fit items-center justify-end p-4 fixed z-20">
-  <div class="flex justify-between gap-x-4 w-fit">
-    <div class="hs-tooltip [--placement:left]">
-      <div class="hs-tooltip-toggle w-auto h-auto">
-        <a href="https://github.com/astronomyf" target="_blank" rel="noopener">
+<nav class="flex w-full h-fit items-center justify-center p-4 fixed z-20">
+  <div class="w-full flex justify-end 2xl:max-w-[1000px]">
+    <div class="flex justify-between gap-x-4 w-fit">
+      <div class="hs-tooltip [--placement:left]">
+        <div class="hs-tooltip-toggle w-auto h-auto">
+          <a
+            href="https://github.com/astronomyf"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-brand-github cursor-pointer hover:opacity-70 transition-opacity"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              stroke-width="1.75"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+              ></path>
+            </svg>
+          </a>
+          <span
+            class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-[#F2F2F5] text-xs font-medium rounded-md shadow-sm dark:bg-[#1B1B1F] border border-border"
+            role="tooltip"
+          >
+            Find me on Github
+          </span>
+        </div>
+      </div>
+
+      <div id="theme-toggle" class="hs-tooltip [--placement:left]">
+        <div class="hs-tooltip-toggle w-auto h-auto">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-brand-github cursor-pointer hover:opacity-70 transition-opacity"
+            class="icon icon-tabler icon-tabler-sun cursor-pointer hover:opacity-70 transition-opacity"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            stroke-width="1.75"
+            stroke="var(--text)"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+            <path
+              d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
+            ></path>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-moon-stars cursor-pointer hover:opacity-70 transition-opacity hs-tooltip-toggle"
             width="18"
             height="18"
             viewBox="0 0 24 24"
@@ -17,66 +69,20 @@
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path
-              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+              d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
             ></path>
+            <path
+              d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"
+            ></path>
+            <path d="M19 11h2m-1 -1v2"></path>
           </svg>
-        </a>
-        <span
-          class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-[#F2F2F5] text-xs font-medium rounded-md shadow-sm dark:bg-[#1B1B1F] border border-border"
-          role="tooltip"
-        >
-          Find me on Github
-        </span>
-      </div>
-    </div>
-
-    <div id="theme-toggle" class="hs-tooltip [--placement:left]">
-      <div class="hs-tooltip-toggle w-auto h-auto">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-sun cursor-pointer hover:opacity-70 transition-opacity"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          stroke-width="1.75"
-          stroke="var(--text)"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
-          <path
-            d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
-          ></path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-moon-stars cursor-pointer hover:opacity-70 transition-opacity hs-tooltip-toggle"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          stroke-width="1.75"
-          stroke="currentColor"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path
-            d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
-          ></path>
-          <path
-            d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"
-          ></path>
-          <path d="M19 11h2m-1 -1v2"></path>
-        </svg>
-        <span
-          class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-[#F2F2F5] text-xs font-medium rounded-md shadow-sm dark:bg-[#1B1B1F] border border-border"
-          role="tooltip"
-        >
-          Toggle theme
-        </span>
+          <span
+            class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-[#F2F2F5] text-xs font-medium rounded-md shadow-sm dark:bg-[#1B1B1F] border border-border"
+            role="tooltip"
+          >
+            Toggle theme
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -85,13 +91,17 @@
 <script>
   type Theme = "dark" | "light";
 
-  // Get theme icons
-  const sunIcon = document.querySelector<HTMLElement>(
-    "#theme-toggle .icon-tabler-sun",
-  );
-  const moonIcon = document.querySelector<HTMLElement>(
-    "#theme-toggle .icon-tabler-moon-stars",
-  );
+  const getIcons = () => {
+    // Get theme icons
+    const sunIcon = document.querySelector<HTMLElement>(
+      "#theme-toggle .icon-tabler-sun",
+    );
+    const moonIcon = document.querySelector<HTMLElement>(
+      "#theme-toggle .icon-tabler-moon-stars",
+    );
+
+    return { sunIcon, moonIcon };
+  };
 
   const getActiveTheme = () =>
     document.documentElement.attributes.getNamedItem("data-theme")?.value ||
@@ -99,6 +109,7 @@
 
   // Add defaults to theme icons
   const setupIcon = () => {
+    const { sunIcon, moonIcon } = getIcons();
     if (!sunIcon || !moonIcon) return;
 
     const activeTheme = getActiveTheme();
@@ -116,6 +127,7 @@
   };
 
   const switchIcon = (theme: Theme) => {
+    const { sunIcon, moonIcon } = getIcons();
     if (!sunIcon || !moonIcon) return;
 
     if (theme === "dark") {
@@ -142,9 +154,14 @@
     document.dispatchEvent(new CustomEvent("set-theme", { detail: theme }));
   };
 
-  setupIcon();
+  const setup = () => {
+    setupIcon();
 
-  document
-    .getElementById("theme-toggle")
-    ?.addEventListener("click", handleThemeSwitch);
+    document
+      .getElementById("theme-toggle")
+      ?.addEventListener("click", handleThemeSwitch);
+  };
+
+  setup();
+  window.addEventListener("astro:after-swap", setup);
 </script>

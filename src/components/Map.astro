@@ -1,14 +1,16 @@
-<div id="map" class="w-80 h-48 rounded-md relative z-0 my-1">
+<div class="relative w-full overflow-hidden">
+  <div id="map" class="w-full min-w-[250px] md:w-80 h-48 rounded-md mt-2 mb-1">
+  </div>
   <div
     id="theme-toggle"
-    class="hs-tooltip [--placement:left] absolute bottom-2 right-2 z-10 cursor-pointer hover:opacity-70 transition-opacity"
+    class="hs-tooltip [--placement:left] absolute bottom-3 right-2 z-10 cursor-pointer"
   >
     <div class="hs-tooltip-toggle w-auto h-auto">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="icon icon-tabler icon-tabler-info-circle-filled text-text"
-        width="24"
-        height="24"
+        class="icon icon-tabler icon-tabler-info-circle-filled text-text hover:opacity-70 transition-opacity"
+        width="18"
+        height="18"
         viewBox="0 0 24 24"
         stroke-width="1.75"
         stroke="currentColor"
@@ -64,6 +66,7 @@
     minZoom: 4,
     attributionControl: false,
     dragPan: false,
+    keyboard: false,
   });
 
   window.mapInstance = map;

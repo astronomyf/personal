@@ -8,6 +8,7 @@ image:
   alt: "The full Astro logo."
 tags: ["astro", "blogging", "learning in public"]
 layout: "../../layouts/BlogLayout.astro"
+id: "project-1"
 ---
 
 Astro 2.0 has been released with some cool features, breaking changes, DX improvements, better error overlay and so on. AstroPaper takes advantage of those cool features, especially Content Collections API.

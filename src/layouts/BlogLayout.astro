@@ -2,37 +2,42 @@
 import Layout from "./Layout.astro";
 import Group from "../components/chat/Group.astro";
 import Message from "../components/chat/Message.astro";
+import Seen from "../components/chat/Seen.astro";
 
 const {
-  frontmatter: { title, pubDate },
+  frontmatter: { title, pubDate, id },
 } = Astro.props;
 
 const formattedDate = new Date(pubDate).toLocaleDateString([], {
   year: "numeric",
   month: "long",
-  day: "numeric",
 });
 ---
 
 <Layout title={title}>
   <main
-    class="flex flex-col w-full h-full justify-center items-center p-8 py-32"
+    class="flex flex-col w-full h-full justify-center items-center p-4 md:p-8 py-20 md:py-32"
   >
-    <div class="w-fit">
-      <h2 class="text-secondary text-sm mb-4 ml-9">{formattedDate}</h2>
-      <Group>
-        <Message className="!max-w-[800px]">
-          <h1 class="underline font-medium">{title}</h1>
-        </Message>
-        <Message className="!max-w-[800px]">
-          <article class="prose dark:prose-invert">
-            <slot />
-          </article>
-        </Message>
-        <Message clickable href="/">
-          <span class="underline font-medium">Go back</span>
-        </Message>
-      </Group>
+    <div class="flex flex-col w-full md:w-fit justify-center">
+      <div class="w-fit h-full justify-center flex flex-col gap-y-3">
+        <h2 class="text-secondary text-sm ml-9">{formattedDate}</h2>
+        <Group>
+          <Message className="max-w-[330px]  md:max-w-none">
+            <h1 class="underline font-semibold">
+              {title}
+            </h1>
+          </Message>
+          <Message className="max-w-[330px] md:max-w-none">
+            <article class="prose dark:prose-invert">
+              <slot />
+            </article>
+          </Message>
+          <Message clickable href="/">
+            <span class="underline font-medium">Go back</span>
+          </Message>
+        </Group>
+        <Seen className="ml-[38px]" />
+      </div>
     </div>
   </main>
 </Layout>
