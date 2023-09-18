@@ -5,7 +5,7 @@ import Message from "../components/chat/Message.astro";
 import Seen from "../components/chat/Seen.astro";
 
 const {
-  frontmatter: { title, pubDate, id },
+  frontmatter: { title, pubDate },
 } = Astro.props;
 
 const formattedDate = new Date(pubDate).toLocaleDateString([], {
