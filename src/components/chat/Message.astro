@@ -5,17 +5,26 @@ interface Props {
   clickable?: boolean;
   className?: string;
   href?: string;
+  standalone?: boolean;
 }
 
-const { clickable = false, className = "", href } = Astro.props;
+const {
+  clickable = false,
+  className = "",
+  href,
+  standalone = false,
+} = Astro.props;
 
 const Element = clickable ? "a" : "li";
 ---
 
 <Element
   class={classNames(
-    "inline-flex flex-col shadow-sm text-sm rounded-3xl [&:not(:first-child):not(:last-child)]:rounded-l-md first:rounded-bl-md last:rounded-tl-md border border-border dark:from-[#1B1B1F] bg-gradient-to-br dark:to-[#27282D] from-[#F2F2F5] to-[#F9F9FB] py-2 px-3.5 w-fit",
+    "inline-flex flex-col shadow-sm text-sm rounded-3xl border border-border dark:from-[#1B1B1F] bg-gradient-to-br dark:to-[#27282D] from-[#F2F2F5] to-[#F9F9FB] py-2 px-3.5 w-fit",
     clickable && "cursor-pointer transition-transform hover:translate-x-1",
+    standalone
+      ? "rounded-full"
+      : "[&:not(:first-child):not(:last-child)]:rounded-l-md first:rounded-bl-md last:rounded-tl-md",
     className,
   )}
   href={clickable ? href : undefined}

@@ -1,3 +1,5 @@
+import preline from "preline/plugin.js";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -14,6 +16,6 @@ module.exports = {
       },
     },
   },
-  plugins: [require("preline/plugin"), require("@tailwindcss/typography")],
+  plugins: [preline, require("@tailwindcss/typography")],
   darkMode: ["class", '[data-theme="dark"]'],
 };
