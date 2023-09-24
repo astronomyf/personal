@@ -5,6 +5,7 @@ import react from "@astrojs/react";
 
 // Syntax highlighting theme for Markdown code blocks
 import mdx from "@astrojs/mdx";
+import vercel from "@astrojs/vercel/serverless";
 const options = {
   theme: {
     dark: "github-dark-dimmed",
@@ -20,5 +21,7 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: false,
     rehypePlugins: [[rehypePrettyCode, options]]
-  }
+  },
+  output: "server",
+  adapter: vercel()
 });
